@@ -1,6 +1,7 @@
-import { View, Text, ImageBackground, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, Dimensions, TouchableOpacity, TextInput } from 'react-native';
 import React from 'react';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import InputField from '../../Components/InputField';
 
 const LoginScreen = ({navigation}) => {
   const { width, height } = Dimensions.get('window');
@@ -23,7 +24,15 @@ const LoginScreen = ({navigation}) => {
     },
     backButtonContainer: {
       flexDirection: 'row',
-      margin:10
+      margin: 10
+    },
+    loginTextContainer:{
+      margin: 15
+    },
+    loginText:{
+      color:'black',
+      fontSize: 25,
+      fontWeight:'bold',
     }
   })
 
@@ -45,9 +54,13 @@ const LoginScreen = ({navigation}) => {
 
         </ImageBackground>
       </View>
-      <View>
-
+      <View style={styles.loginTextContainer}>
+        <Text style={styles.loginText}>
+          Log in
+        </Text>
       </View>
+      <InputField label={'Enter Email'}/>
+      <InputField label={'Enter password'} type={'password'}/>
     </View>
   );
 };
