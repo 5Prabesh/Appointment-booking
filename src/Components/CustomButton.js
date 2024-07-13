@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-const CustomButton = ({ label, showGoogleIcon, onPress }) => {
+const CustomButton = ({ label, showGoogleIcon, onPress, backgroundColor, textColor }) => {
   const { width } = Dimensions.get('window');
 
   const styles = StyleSheet.create({
@@ -12,20 +12,20 @@ const CustomButton = ({ label, showGoogleIcon, onPress }) => {
     loginButton: {
       flexDirection: 'row',
       alignItems: 'center',
-      backgroundColor: 'black',
+      backgroundColor: backgroundColor || 'black',
       width: width * 0.9,
       height: 50,
       borderRadius: 20,
       justifyContent: 'center',
     },
     loginButtonText: {
-      color: 'white',
+      color: textColor || 'white',
       textAlign: 'center',
       fontWeight: 'bold',
       marginLeft: showGoogleIcon ? 10 : 0, // Add space only if the icon is shown
     },
     googleIcon: {
-      color: 'white',
+      color: 'black',
     },
   });
 

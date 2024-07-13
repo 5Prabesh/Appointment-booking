@@ -95,7 +95,7 @@ const LoginScreen = ({ navigation }) => {
         <View style={{marginTop: 15}}>
           <CustomButton label={'Login'} showGoogleIcon={false} />
           <Text style={{ textAlign: 'center', margin: 5, fontWeight: 'bold', color: 'black' }}>OR</Text>
-          <CustomButton label={'Continue with Google'} showGoogleIcon={true} />
+          <CustomButton label={'Continue with Google'} showGoogleIcon={true} backgroundColor={'#D9D9D9'} textColor={'black'}/>
         </View>
         <View style={styles.footerContainer}>
           <Text style={styles.footerText}>
