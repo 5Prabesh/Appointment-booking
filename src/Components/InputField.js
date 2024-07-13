@@ -15,7 +15,7 @@ const InputField = ({ label, type }) => {
             color: 'black'
         },
         inputContainer: {
-            marginLeft: 10
+            // marginLeft: 10
         },
         icon:{
             marginRight: 30,
@@ -52,7 +52,7 @@ const InputField = ({ label, type }) => {
                             style={{
                                 backgroundColor: 'grey',
                                 height: 1,
-                                width: '90%',
+                                width: '95%',
                                 marginLeft: 5
                             }}
                         />
@@ -68,7 +68,7 @@ const InputField = ({ label, type }) => {
                             style={{
                                 backgroundColor: 'grey',
                                 height: 1,
-                                width: '90%',
+                                width: '95%',
                                 marginLeft: 5
                             }}
                         />
