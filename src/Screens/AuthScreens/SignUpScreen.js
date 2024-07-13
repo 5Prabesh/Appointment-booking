@@ -38,8 +38,19 @@ const SignUpScreen = ({ navigation }) => {
             By signing up, you are agree to our <Text style={{color:'black', fontWeight:'bold'}}>Terms, Conditions{'\n'}</Text> and <Text style={{color:'black', fontWeight:'bold'}}>Policies.</Text>
           </Text>
         </View>
-        <View style={{marginTop: 30}}>
+        <View style={{marginTop: 20}}>
         <CustomButton label={'Continue'} onPress={()=>navigation.navigate('Login')}/>
+        </View>
+        <View style={{marginTop: 15,flexDirection:'row', justifyContent:'center'}}>
+          <Text style={{color:'black,', fontWeight:'bold'}}>Already have an account?</Text>
+          <TouchableOpacity 
+          activeOpacity={0.4}
+          onPress={()=>navigation.navigate('Login')}
+          >
+            <Text>
+              {'\t'}Log in 
+            </Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>
