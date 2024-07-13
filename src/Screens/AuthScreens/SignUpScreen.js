@@ -42,7 +42,7 @@ const SignUpScreen = ({ navigation }) => {
         <CustomButton label={'Continue'} onPress={()=>navigation.navigate('Login')}/>
         </View>
         <View style={{marginTop: 15,flexDirection:'row', justifyContent:'center'}}>
-          <Text style={{color:'black,', fontWeight:'bold'}}>Already have an account?</Text>
+          <Text style={{color:'black', fontWeight:'bold'}}>Already have an account?</Text>
           <TouchableOpacity 
           activeOpacity={0.4}
           onPress={()=>navigation.navigate('Login')}
