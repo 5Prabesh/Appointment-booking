@@ -2,11 +2,11 @@ import { View, Text,ImageBackground,TouchableOpacity,StyleSheet,Dimensions } fro
 import React from 'react'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-const ImageContainer = ({path,onPress}) => {
+const ImageContainer = ({path,onPress,imageheight}) => {
     const{height,width} = Dimensions.get('screen')
     const styles = StyleSheet.create({
         imageStyle: {
-            height: height * 0.35,
+            height: imageheight || height * 0.35,
             width: width,
           },
           backIcon: {

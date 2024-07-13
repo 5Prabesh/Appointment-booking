@@ -13,7 +13,7 @@ const SignUpScreen = ({ navigation }) => {
     signUpTextContainer: {
       margin: 15
     },
-    loginText: {
+    signUpText: {
       color: 'black',
       fontSize: 25,
       fontWeight: 'bold',
@@ -25,7 +25,7 @@ const SignUpScreen = ({ navigation }) => {
       <ImageContainer path={require('../../assets/images/signUpImage.png')} onPress={() => navigation.goBack()} />
       <ScrollView>
         <View style={styles.signUpTextContainer}>
-          <Text style={styles.loginText}>
+          <Text style={styles.signUpText}>
             Sign up
           </Text>
           <InputField label={'Enter email address'} />
