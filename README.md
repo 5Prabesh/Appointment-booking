@@ -1,9 +1,15 @@
 ### Screen images of Application 
-<img src='ReadmeImages\image1.png' height='896 ' width='414'/>
-<img src='ReadmeImages\image2.png' height='896' width='414'/>
-<img src='ReadmeImages\image3.png' height='896' width='414'/>
-<img src='ReadmeImages\image4.png' height='896' width='414'/>
-<img src='ReadmeImages\image5.png' height='896' width='414'/>
+<table>
+  <tr>
+    <td><img src="ReadmeImages/image1.png" height="300" width="150"/></td>
+    <td><img src="ReadmeImages/image2.png" height="300" width="150"/></td>
+    <td><img src="ReadmeImages/image3.png" height="300" width="150"/></td>
+  </tr>
+  <tr>
+    <td><img src="ReadmeImages/image4.png" height="300" width="150"/></td>
+    <td><img src="ReadmeImages/image5.png" height="300" width="150"/></td>
+  </tr>
+</table>
 
 
 
