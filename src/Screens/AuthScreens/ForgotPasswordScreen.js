@@ -21,7 +21,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
     }
   })
   return (
-    <View style={{flex:1}}>
+    <View style={{flex:1, backgroundColor:'white'}}>
       <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
       <ImageContainer path={require('../../assets/images/ForgotPasswordImage.png')} imageheight={height * 0.45} onPress={() => navigation.goBack()} />
       <ScrollView>

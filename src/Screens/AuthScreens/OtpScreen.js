@@ -7,7 +7,7 @@ const OtpScreen = ({ navigation }) => {
     const { height, width } = Dimensions.get('screen')
     const styles = StyleSheet.create({
         otpContainer: {
-            margin: 10
+            margin: 10,
         },
         otpText: {
             fontWeight: 'bold',
@@ -25,6 +25,7 @@ const OtpScreen = ({ navigation }) => {
         otpInputContainerWrap:{
             marginTop: 10,
             flexDirection: 'row',
+            justifyContent:'center'
         },
         otpInputContainer:{
             paddingLeft: 15
@@ -42,7 +43,7 @@ const OtpScreen = ({ navigation }) => {
         }
     }
     return (
-        <View style={{flex:1}}>
+        <View style={{flex:1, backgroundColor:'white'}}>
             <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
             <ImageContainer path={require('../../assets/images/OtpImage.png')} imageheight={height * 0.4} onPress={() => navigation.goBack()} />
             <ScrollView>

@@ -8,7 +8,8 @@ const SignUpScreen = ({ navigation }) => {
   const { width, height } = Dimensions.get('screen');
   const styles = StyleSheet.create({
     container: {
-      flex: 1
+      flex: 1,
+      backgroundColor:'white'
     },
     signUpTextContainer: {
       margin: 15
