@@ -8,6 +8,7 @@
   <tr>
     <td><img src="ReadmeImages/image4.png" height="300" width="150"/></td>
     <td><img src="ReadmeImages/image5.png" height="300" width="150"/></td>
+    <td><img src="ReadmeImages/image6.png" height="300" width="150"/></td>
   </tr>
 </table>
 
