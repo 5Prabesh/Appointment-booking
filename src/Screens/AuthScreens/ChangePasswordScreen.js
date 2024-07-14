@@ -40,7 +40,7 @@ const ChangePasswordScreen = ({navigation}) => {
             <InputField label={'Confirm new password'} type={'password'}/>
         </View>
         <View style={styles.button}>
-            <CustomButton label={'Confirm'}/>
+            <CustomButton label={'Confirm'} onPress={()=>navigation.navigate('Login')}/>
         </View>
       </ScrollView>
     </View>
