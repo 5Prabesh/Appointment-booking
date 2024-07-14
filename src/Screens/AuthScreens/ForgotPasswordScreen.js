@@ -42,7 +42,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
           <InputField label={'Enter email address'} />
         </View>
         <View style={{marginTop: 25}}>
-        <CustomButton label={'Continue'}/>
+        <CustomButton label={'Continue'} onPress={()=>{navigation.navigate('Otp')}}/>
         </View>
       </ScrollView>
     </View>
