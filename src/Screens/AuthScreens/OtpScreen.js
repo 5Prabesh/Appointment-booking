@@ -53,7 +53,7 @@ const OtpScreen = ({ navigation }) => {
                     </Text>
                 </View>
                 <View style={styles.otpContainer}>
-                    <Text>
+                    <Text style={{color:'grey'}}>
                     Enter 4 digit verification code sent to your registered mobile number.
                     </Text>
                 </View>

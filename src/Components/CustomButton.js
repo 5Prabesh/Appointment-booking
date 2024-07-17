@@ -4,6 +4,8 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const CustomButton = ({ label, showGoogleIcon, onPress, backgroundColor, textColor }) => {
   const { width } = Dimensions.get('window');
+  const { height } = Dimensions.get('window');
+
 
   const styles = StyleSheet.create({
     loginButtonContainer: {
@@ -14,7 +16,7 @@ const CustomButton = ({ label, showGoogleIcon, onPress, backgroundColor, textCol
       alignItems: 'center',
       backgroundColor: backgroundColor || 'black',
       width: width * 0.9,
-      height: 50,
+      height: height * 0.08,
       borderRadius: 20,
       justifyContent: 'center',
     },

@@ -4,6 +4,7 @@ import { View, Image, ScrollView, Dimensions } from 'react-native';
 const ImageSlider = ({ images }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const screenWidth = Dimensions.get('window').width;
+  const screenHeight = Dimensions.get('window').height;
 
   const handleScroll = (event) => {
     const contentOffsetX = event.nativeEvent.contentOffset.x;
@@ -35,9 +36,9 @@ const ImageSlider = ({ images }) => {
               source={image}
               style={{
                 width: screenWidth * 0.8, // 80% of screen width
-                height: 400,
+                height: screenHeight * 0.6,
                 borderRadius: 20,
-                marginHorizontal: screenWidth * 0.1, // Center the image with horizontal margin
+                marginHorizontal: screenWidth * 2, // Center the image with horizontal margin
               }}
             />
           </View>
@@ -45,7 +46,7 @@ const ImageSlider = ({ images }) => {
       </ScrollView>
 
       {/* Circle Indicator */}
-      <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 20 }}>
+      <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 30 }}>
         {images.map((_, index) => (
           <View
             key={index}

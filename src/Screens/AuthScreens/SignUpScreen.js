@@ -35,7 +35,7 @@ const SignUpScreen = ({ navigation }) => {
 
         </View>
         <View style={{marginTop: 15,alignItems:'center'}}>
-          <Text>
+          <Text style={{color:'grey'}}>
             By signing up, you are agree to our <Text style={{color:'black', fontWeight:'bold'}}>Terms, Conditions{'\n'}</Text> and <Text style={{color:'black', fontWeight:'bold'}}>Policies.</Text>
           </Text>
         </View>
@@ -48,7 +48,7 @@ const SignUpScreen = ({ navigation }) => {
           activeOpacity={0.4}
           onPress={()=>navigation.navigate('Login')}
           >
-            <Text>
+            <Text style={{color:'grey'}}>
               {'\t'}Log in 
             </Text>
           </TouchableOpacity>

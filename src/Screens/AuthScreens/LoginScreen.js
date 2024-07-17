@@ -10,7 +10,8 @@ const LoginScreen = ({ navigation }) => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor:'white'
+      backgroundColor:'white',
+      // paddingTop: StatusBar.currentHeight
     },
     loginTextContainer: {
       margin: 15
@@ -32,7 +33,7 @@ const LoginScreen = ({ navigation }) => {
       flexDirection: 'row',
       alignItems: 'center',
       marginTop: 20,
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
     footerText: {
       color: 'black',
@@ -46,7 +47,7 @@ const LoginScreen = ({ navigation }) => {
 
       <ImageContainer path={require('../../assets/images/loginImage.png')} onPress={()=>navigation.goBack()}/>
 
-      <ScrollView>
+      <ScrollView style>
         <View style={styles.loginTextContainer}>
           <Text style={styles.loginText}>
             Log in
@@ -77,7 +78,7 @@ const LoginScreen = ({ navigation }) => {
             onPress={() => { navigation.navigate('SignUp') }}
             activeOpacity={0.7}
           >
-            <Text>
+            <Text style={{color:'grey'}}>
               {'\t'}SignUp
             </Text>
           </TouchableOpacity>

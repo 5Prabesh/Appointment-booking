@@ -14,6 +14,7 @@ const OnBoardingScreen = ({ navigation }) => {
 
   ];
   const { width } = Dimensions.get('window')
+  const {height} = Dimensions.get('window')
 
   const styles = StyleSheet.create({
     container: {
@@ -26,7 +27,7 @@ const OnBoardingScreen = ({ navigation }) => {
     <View style={styles.container}>
       <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
       <ImageSlider images={images} navigation={navigation} />
-      <View style={{ marginTop: 50 }}>
+      <View style={{ marginTop:  height * 0.1}}>
         <CustomButton 
         label={"Let's Go"} 
         onPress={()=>navigation.navigate('Login')}
