@@ -34,7 +34,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
           </Text>
         </View>
         <View style={styles.forgotTextContainer}>
-          <Text style={{color:'grey'}}>
+          <Text style={{color : 'grey'}}>
             Please enter the email address you’d like your password reset information sent to
           </Text>
         </View>
@@ -49,4 +49,4 @@ const ForgotPasswordScreen = ({ navigation }) => {
   )
 }
 
-export default ForgotPasswordScreen
+export default ForgotPasswordScreen;
