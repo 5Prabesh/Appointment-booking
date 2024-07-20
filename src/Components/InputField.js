@@ -2,7 +2,7 @@ import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-const InputField = ({ label, type }) => {
+const InputField = ({ label, type,value,onChangeText }) => {
 
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
@@ -37,6 +37,8 @@ const InputField = ({ label, type }) => {
                                 placeholder={label}
                                 placeholderTextColor={'grey'}
                                 secureTextEntry={!isPasswordVisible}
+                                onChangeText={onChangeText}
+                                value={value}
                             />
                             <TouchableOpacity onPress={togglePasswordVisibility} activeOpacity={0.7}>
                                 <FontAwesome5
@@ -63,6 +65,8 @@ const InputField = ({ label, type }) => {
                             style={styles.textPlaceHolder}
                             placeholder={label}
                             placeholderTextColor={'grey'}
+                            onChangeText={onChangeText}
+                            value={value}
                         />
                         <View
                             style={{
