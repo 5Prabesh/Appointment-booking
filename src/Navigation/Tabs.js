@@ -16,7 +16,7 @@ const Tabs = () => {
             headerShown:false,
             tabBarShowLabel:false,
             tabBarStyle:{
-                backgroundColor:'#F4F2F2',
+                backgroundColor:'white',
                 height: 60,
                 borderColor:'white',
                 position:'static'
