@@ -1,5 +1,6 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, StatusBar } from 'react-native';
 import React from 'react';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import SearchField from '../../Components/SearchField';
 import DoctorCard from '../../Components/Card';
 
@@ -8,10 +9,10 @@ const HomeScreen = () => {
   
   const styles = StyleSheet.create({
     userProfileImage: {
-      height: 45,
-      width: 45,
+      height: hp(5),
+      width: wp(10),
       backgroundColor: 'grey',
-      borderRadius: 25
+      borderRadius: 90
     },
     profileContainer: {
       margin: 20,
@@ -22,7 +23,7 @@ const HomeScreen = () => {
       margin: 12
     },
     usernameText: {
-      fontSize: 16,
+      fontSize: hp(2),
       color: 'black',
       fontWeight: '600'
     },
@@ -32,22 +33,27 @@ const HomeScreen = () => {
       justifyContent: 'space-between'
     },
     headText: {
-      fontSize: 25,
+      fontSize: wp(5.5),
       fontWeight: '700',
       color: 'black',
     },
     image: {
-      width: 90,
-      height: 90,
+      width: wp(35),
+      height: hp(16),
       borderRadius: 10
     },
     popularTextContainer:{
       margin: 20
     },
     popularText:{
-      fontSize: 20,
+      fontSize: wp(6),
       fontWeight: '600',
       color: 'black',
+    },
+    professionText:{
+      color:'grey',
+      fontSize: wp(3.5),
+      marginTop:4,
     }
   })
   return (
@@ -69,7 +75,7 @@ const HomeScreen = () => {
             Looking For
           </Text>
           <TouchableOpacity activeOpacity={0.6}>
-            <Text style={{ fontWeight: 'bold', fontSize: 15 }}>
+            <Text style={{ fontWeight: 'bold', fontSize: wp(4), color:'grey' }}>
               More
             </Text>
           </TouchableOpacity>
@@ -84,25 +90,25 @@ const HomeScreen = () => {
           <View>
             <TouchableOpacity activeOpacity={0.7}>
               <Image source={require('../../assets/images/DoctorImage.png')} style={styles.image} />
-              <Text>Doctor</Text>
+              <Text style={styles.professionText}>Doctor</Text>
             </TouchableOpacity>
           </View>
           <View style={{marginLeft:15}}>
             <TouchableOpacity activeOpacity={0.7}>
               <Image source={require('../../assets/images/DentistImage.png')} style={styles.image} />
-              <Text>Dentist</Text>
+              <Text style={styles.professionText}>Dentist</Text>
             </TouchableOpacity>
           </View>
           <View style={{marginLeft:15}}>
             <TouchableOpacity activeOpacity={0.7}>
               <Image source={require('../../assets/images/HairDresserImage.png')} style={styles.image} />
-              <Text>Hair Dresser</Text>
+              <Text style={styles.professionText}>Hair Dresser</Text>
             </TouchableOpacity>
           </View>
           <View style={{marginLeft:15, marginRight: 15}}>
             <TouchableOpacity activeOpacity={0.7}>
               <Image source={require('../../assets/images/Trainer.png')} style={styles.image} />
-              <Text>Trainer</Text>
+              <Text style={styles.professionText}>Trainer</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
@@ -111,6 +117,7 @@ const HomeScreen = () => {
             Popular
           </Text>
         </View>
+
         {/* card */}
         <DoctorCard />
       </ScrollView>
