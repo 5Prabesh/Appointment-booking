@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from 'react-native';
 import professionalsData from '../assets/data/professionalsdata';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 
 const DoctorCard = () => {
 
-  const [doctors, setDoctors] = useState(professionalsData);
+  const [doctors, setDoctors] = useState(professionalsData.filter(profession => profession.isPopular === 'true'));
 
   const renderDoctor = ({ item }) => (
     <View style={styles.cardContainer}>
@@ -20,7 +22,7 @@ const DoctorCard = () => {
         </View>
       </View>
       <View style={styles.descriptionContainer}>
-        <Text style={styles.descriptionText} numberOfLines={3}>
+        <Text style={styles.descriptionText} numberOfLines={4}>
           {item.description}
         </Text>
       </View>
@@ -37,6 +39,7 @@ const DoctorCard = () => {
       </View>
     </View>
   )
+
 
   return (
     <FlatList
@@ -55,13 +58,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#8c8c8c',
     marginLeft: 15,
     borderRadius: 10,
-    width: 240, // Adjust width for horizontal scrolling
+    width: wp(75), // Adjust width for horizontal scrolling
     padding: 10, // Add padding to ensure content doesn't touch the edges
   },
   image: {
-    width: 30,
-    height: 30,
-    borderRadius: 20
+    width: wp(11),
+    height: hp(6),
+    borderRadius: 25
   },
   containerData: {
     flexDirection: 'row',
@@ -73,20 +76,21 @@ const styles = StyleSheet.create({
   },
   nameText: {
     color: 'white',
-    fontSize: 14,
+    fontSize: wp(4),
     fontWeight: '500'
   },
   professionText: {
-    color: '#dedede'
+    color: '#dedede',
+    fontSize: wp(3.5)
   },
   descriptionContainer: {
-    marginLeft: 12,
-    maxWidth: 190 // Set maximum width to constrain the text
+    marginLeft:12,
+    // maxWidth: 240 // Set maximum width to constrain the text
   },
   descriptionText: {
     color: 'white',
-    fontSize: 12,
-    textAlign: 'justify'
+    fontSize: wp(3.5),
+    textAlign:'justify'
   },
   reviewsContainer: {
     marginTop:10,
@@ -96,11 +100,11 @@ const styles = StyleSheet.create({
   },
   rating: {
     color: '#FFD700',
-    fontSize: 13
+    fontSize: wp(4)
   },
   reviews: {
     color: 'white',
-    fontSize: 13
+    fontSize: wp(4)
   },
   cardFooterContainer: {
     flexDirection: 'row',
@@ -112,8 +116,8 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 10,
     backgroundColor: 'white',
-    width: 70,
-    height: 30,
+    width: wp(20),
+    height: wp(10),
     justifyContent: 'center',
     borderRadius: 10
   },
