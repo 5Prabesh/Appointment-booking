@@ -1,6 +1,7 @@
 import { View, TextInput, } from 'react-native';
 import React from 'react';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
 const SearchField = ({iconName, label}) => {
@@ -23,6 +24,7 @@ const SearchField = ({iconName, label}) => {
             style={{
               position: 'absolute',
               left: 10,
+              color: 'grey'
             }}
           />
           <TextInput
@@ -32,7 +34,8 @@ const SearchField = ({iconName, label}) => {
             style={{
               flex: 1,
               paddingLeft: 40, // Adjust the padding to make room for the icon
-              height: 45,
+              height: hp(6),
+              color:'black'
             }}
           />
         </View>
