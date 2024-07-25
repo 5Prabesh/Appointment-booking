@@ -6,6 +6,7 @@ import CategoriesScreen from "../Screens/TabScreens/CategoriesScreen";
 import AppointmentScreen from "../Screens/TabScreens/AppointmentScreen";
 import MessageScreen from "../Screens/TabScreens/MessageScreen";
 import ProfileScreen from "../Screens/TabScreens/ProfileScreen";
+import CategoriesStack from "./CategoriesStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +42,7 @@ const Tabs = () => {
                 )
             }}
             />
-            <Tab.Screen name='CategoriesScreen' component={CategoriesScreen} 
+            <Tab.Screen name='CategoriesStack' component={CategoriesStack} 
             options={{
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems:'center'}}>
