@@ -5,7 +5,7 @@ import SearchField from '../../Components/SearchField';
 import DoctorCard from '../../Components/Card';
 
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   
   const styles = StyleSheet.create({
     userProfileImage: {
@@ -74,7 +74,7 @@ const HomeScreen = () => {
           <Text style={styles.headText}>
             Looking For
           </Text>
-          <TouchableOpacity activeOpacity={0.6}>
+          <TouchableOpacity activeOpacity={0.6} onPress={()=>navigation.navigate('CategoriesScreen')}>
             <Text style={{ fontWeight: 'bold', fontSize: wp(4), color:'grey' }}>
               More
             </Text>
@@ -88,7 +88,7 @@ const HomeScreen = () => {
         marginLeft:20,
         }}>
           <View>
-            <TouchableOpacity activeOpacity={0.7}>
+            <TouchableOpacity activeOpacity={0.7} onPress={()=>navigation.navigate('DoctorScreen')}>
               <Image source={require('../../assets/images/DoctorImage.png')} style={styles.image} />
               <Text style={styles.professionText}>Doctor</Text>
             </TouchableOpacity>
