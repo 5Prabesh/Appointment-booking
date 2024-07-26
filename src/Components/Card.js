@@ -22,7 +22,7 @@ const DoctorCard = () => {
         </View>
       </View>
       <View style={styles.descriptionContainer}>
-        <Text style={styles.descriptionText} numberOfLines={4}>
+        <Text style={styles.descriptionText} numberOfLines={2}>
           {item.description}
         </Text>
       </View>
