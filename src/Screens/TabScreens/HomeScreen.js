@@ -88,25 +88,25 @@ const HomeScreen = ({navigation}) => {
         marginLeft:20,
         }}>
           <View>
-            <TouchableOpacity activeOpacity={0.7} onPress={()=>navigation.navigate('DoctorScreen')}>
+            <TouchableOpacity activeOpacity={0.7} onPress={()=>navigation.navigate('CategoriesStack', { screen: 'DoctorScreen' })}>
               <Image source={require('../../assets/images/DoctorImage.png')} style={styles.image} />
               <Text style={styles.professionText}>Doctor</Text>
             </TouchableOpacity>
           </View>
           <View style={{marginLeft:15}}>
-            <TouchableOpacity activeOpacity={0.7}>
+            <TouchableOpacity activeOpacity={0.7} onPress={()=>navigation.navigate('CategoriesStack', { screen: 'DentistScreen' })}>
               <Image source={require('../../assets/images/DentistImage.png')} style={styles.image} />
               <Text style={styles.professionText}>Dentist</Text>
             </TouchableOpacity>
           </View>
           <View style={{marginLeft:15}}>
-            <TouchableOpacity activeOpacity={0.7}>
+            <TouchableOpacity activeOpacity={0.7} onPress={()=>navigation.navigate('CategoriesStack', { screen: 'HairDresserScreen' })}>
               <Image source={require('../../assets/images/HairDresserImage.png')} style={styles.image} />
               <Text style={styles.professionText}>Hair Dresser</Text>
             </TouchableOpacity>
           </View>
-          <View style={{marginLeft:15, marginRight: 15}}>
-            <TouchableOpacity activeOpacity={0.7}>
+          <View style={{marginLeft:15, marginRight: 15}} >
+            <TouchableOpacity activeOpacity={0.7} onPress={()=>navigation.navigate('CategoriesStack', { screen: 'TrainerScreen' })}>
               <Image source={require('../../assets/images/Trainer.png')} style={styles.image} />
               <Text style={styles.professionText}>Trainer</Text>
             </TouchableOpacity>
