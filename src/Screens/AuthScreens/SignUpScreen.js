@@ -85,6 +85,7 @@ const SignUpScreen = ({ navigation }) => {
         <View style={{marginTop: 15,flexDirection:'row', justifyContent:'center'}}>
           <Text style={{color:'black', fontWeight:'bold'}}>Already have an account?</Text>
           <TouchableOpacity 
+          onPress={()=>navigation.navigate('Login')}
           activeOpacity={0.4}
           >
             <Text style={{color:'grey'}}>
