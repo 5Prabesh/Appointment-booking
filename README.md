@@ -1,21 +1,3 @@
-### Screen images of Application 
-<table>
-  <tr>
-    <td><img src="ReadmeImages/image1.png" height="300" width="150"/></td>
-    <td><img src="ReadmeImages/image2.png" height="300" width="150"/></td>
-    <td><img src="ReadmeImages/image3.png" height="300" width="150"/></td>
-  </tr>
-  <tr>
-    <td><img src="ReadmeImages/image4.png" height="300" width="150"/></td>
-    <td><img src="ReadmeImages/image5.png" height="300" width="150"/></td>
-    <td><img src="ReadmeImages/image6.png" height="300" width="150"/></td>
-  </tr>
-</table>
-
-
-
-
-
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
