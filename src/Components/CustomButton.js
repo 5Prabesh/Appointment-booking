@@ -1,11 +1,10 @@
 import React from 'react';
 import { View, Text, Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 
 const CustomButton = ({ label, showGoogleIcon, onPress, backgroundColor, textColor }) => {
-  const { width } = Dimensions.get('window');
-  const { height } = Dimensions.get('window');
-
 
   const styles = StyleSheet.create({
     loginButtonContainer: {
@@ -15,9 +14,9 @@ const CustomButton = ({ label, showGoogleIcon, onPress, backgroundColor, textCol
       flexDirection: 'row',
       alignItems: 'center',
       backgroundColor: backgroundColor || '#001A23',
-      width: width * 0.9,
-      height: height * 0.08,
-      borderRadius: 20,
+      width: wp(90),
+      height: hp(8),
+      borderRadius: 15,
       justifyContent: 'center',
     },
     loginButtonText: {
