@@ -27,17 +27,19 @@ const OnBoardingScreen = ({ navigation }) => {
     <View style={styles.container}>
       <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
       <ImageSlider images={images} navigation={navigation} />
-      <View style={{ marginTop:  height * 0.1}}>
+      <View style={{ 
+        position: 'absolute',
+        bottom: height * 0.05, // 10% from the bottom of the screen
+        width: '100%',
+        alignItems: 'center',
+      }}>
         <CustomButton 
         label={"Let's Go"} 
         onPress={()=>navigation.navigate('Login')}
         />
       </View>
-
     </View>
   )
 }
-
-
 
 export default OnBoardingScreen
