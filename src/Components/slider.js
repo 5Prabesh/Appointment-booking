@@ -19,7 +19,7 @@ const ImageSlider = ({ images }) => {
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
-        style={{ marginTop: 30 }}
+        style={{ marginTop: 20 }}
         onScroll={handleScroll}
         scrollEventThrottle={16} // Increase scroll event frequency for more accurate updates
         bounces={false}
@@ -35,10 +35,11 @@ const ImageSlider = ({ images }) => {
             <Image
               source={image}
               style={{
-                width: screenWidth * 0.8, // 80% of screen width
+                width: screenWidth * 0.85, // 80% of screen width
                 height: screenHeight * 0.6,
-                borderRadius: 20,
+                borderRadius: 15,
                 marginHorizontal: screenWidth * 2, // Center the image with horizontal margin
+                backgroundColor:'#B3EFB2'
               }}
             />
           </View>
@@ -51,7 +52,7 @@ const ImageSlider = ({ images }) => {
           <View
             key={index}
             style={{
-              backgroundColor: index === activeIndex ? 'black' : 'grey',
+              backgroundColor: index === activeIndex ? '#7A9E7E' : '#B3EFB2',
               height: 10,
               width: 10,
               marginHorizontal: 5,
