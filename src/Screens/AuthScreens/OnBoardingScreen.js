@@ -8,12 +8,12 @@ const OnBoardingScreen = ({ navigation }) => {
 
     require('../../assets/images/onBoarding1.png'),
 
-    require('../../assets/images/onBoarding2.png'),
+    require('../../assets/images/onBoarding1.png'),
 
-    require('../../assets/images/onBoarding3.png')
+    require('../../assets/images/onBoarding1.png')
 
   ];
-  const { width } = Dimensions.get('window')
+  const {width} = Dimensions.get('window')
   const {height} = Dimensions.get('window')
 
   const styles = StyleSheet.create({
