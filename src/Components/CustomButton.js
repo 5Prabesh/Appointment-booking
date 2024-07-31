@@ -14,14 +14,14 @@ const CustomButton = ({ label, showGoogleIcon, onPress, backgroundColor, textCol
     loginButton: {
       flexDirection: 'row',
       alignItems: 'center',
-      backgroundColor: backgroundColor || 'black',
+      backgroundColor: backgroundColor || '#001A23',
       width: width * 0.9,
       height: height * 0.08,
       borderRadius: 20,
       justifyContent: 'center',
     },
     loginButtonText: {
-      color: textColor || 'white',
+      color: textColor || '#E8F1F2',
       textAlign: 'center',
       fontWeight: 'bold',
       marginLeft: showGoogleIcon ? 10 : 0, // Add space only if the icon is shown
