@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { View, Image, ScrollView, Dimensions } from 'react-native';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const ImageSlider = ({ images }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const screenWidth = Dimensions.get('window').width;
-  const screenHeight = Dimensions.get('window').height;
+  // const screenHeight = Dimensions.get('window').height;
 
   const handleScroll = (event) => {
     const contentOffsetX = event.nativeEvent.contentOffset.x;
-    const index = Math.floor(contentOffsetX / screenWidth);
+    const index = Math.round(contentOffsetX / screenWidth);
     setActiveIndex(index);
   };
 
@@ -35,10 +36,10 @@ const ImageSlider = ({ images }) => {
             <Image
               source={image}
               style={{
-                width: screenWidth * 0.85, // 80% of screen width
-                height: screenHeight * 0.6,
+                width: wp(90), // 80% of screen width
+                height: hp(60),
                 borderRadius: 15,
-                marginHorizontal: screenWidth * 2, // Center the image with horizontal margin
+                marginHorizontal: wp(9), // Center the image with horizontal margin
                 backgroundColor:'#B3EFB2'
               }}
             />
@@ -53,8 +54,8 @@ const ImageSlider = ({ images }) => {
             key={index}
             style={{
               backgroundColor: index === activeIndex ? '#7A9E7E' : '#B3EFB2',
-              height: 10,
-              width: 10,
+              height: hp(1.5),
+              width: wp(3),
               marginHorizontal: 5,
               borderRadius: 5,
             }}
