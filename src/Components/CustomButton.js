@@ -16,7 +16,7 @@ const CustomButton = ({ label, showGoogleIcon, onPress, backgroundColor, textCol
       backgroundColor: backgroundColor || '#001A23',
       width: wp(90),
       height: hp(8),
-      borderRadius: 15,
+      borderRadius: 8,
       justifyContent: 'center',
     },
     loginButtonText: {
@@ -24,6 +24,7 @@ const CustomButton = ({ label, showGoogleIcon, onPress, backgroundColor, textCol
       textAlign: 'center',
       fontWeight: 'bold',
       marginLeft: showGoogleIcon ? 10 : 0, // Add space only if the icon is shown
+      fontSize: wp(4)
     },
     googleIcon: {
       color: 'black',
@@ -38,7 +39,7 @@ const CustomButton = ({ label, showGoogleIcon, onPress, backgroundColor, textCol
       onPress={onPress}
       
       >
-        {showGoogleIcon && <FontAwesome5 name="google" size={15} style={styles.googleIcon} />}
+        {showGoogleIcon && <FontAwesome5 name="google" size={20} style={styles.googleIcon} />}
         <Text style={styles.loginButtonText}>
           {label}
         </Text>
