@@ -1,12 +1,14 @@
 import { View, Text,ImageBackground,TouchableOpacity,StyleSheet,Dimensions } from 'react-native'
 import React from 'react'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 
 const ImageContainer = ({path,onPress,imageheight}) => {
     const{height,width} = Dimensions.get('screen')
     const styles = StyleSheet.create({
         imageStyle: {
-            height: imageheight || height * 0.35,
+            height: imageheight || hp(45),
             width: width,
           },
           backIcon: {
