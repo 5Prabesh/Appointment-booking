@@ -1,4 +1,4 @@
-import { View, Text, StatusBar, Dimensions, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StatusBar, Dimensions, StyleSheet, TouchableOpacity, ScrollView, ToastAndroid } from 'react-native';
 import React, { useState } from 'react';
 import ImageContainer from '../../Components/ImageContainer';
 import InputField from '../../Components/InputField';
@@ -16,21 +16,25 @@ const SignUpScreen = ({ navigation }) => {
   };
 
   const createUser = () => {
+    if (!email || !password) {
+      ToastAndroid.show('Please enter both email and password', ToastAndroid.SHORT);
+      return;
+    }
+  
     auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
-        console.log('User account created & signed in!');
+        console.log('User signed in!');
+        ToastAndroid.show('User successfully Logged In', ToastAndroid.SHORT);
       })
       .catch(error => {
-        if (error.code === 'auth/email-already-in-use') {
-          console.log('That email address is already in use!');
-        }
-
         if (error.code === 'auth/invalid-email') {
           console.log('That email address is invalid!');
+          ToastAndroid.show('Credentials are incorrect', ToastAndroid.SHORT);
+        } else {
+          console.error(error);
+          ToastAndroid.show('Login failed. Please try again', ToastAndroid.SHORT);
         }
-
-        console.error(error);
       });
   };
 

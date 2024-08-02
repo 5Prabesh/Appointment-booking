@@ -11,6 +11,11 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState(null);
 
   const loginUser = () => {
+    if (!email || !password) {
+      ToastAndroid.show('Please enter both email and password', ToastAndroid.SHORT);
+      return;
+    }
+
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
@@ -21,8 +26,10 @@ const LoginScreen = ({ navigation }) => {
         if (error.code === 'auth/invalid-email') {
           console.log('That email address is invalid!');
           ToastAndroid.show('Credentials are incorrect', ToastAndroid.SHORT);
+        } else {
+          console.error(error);
+          ToastAndroid.show('Login failed. Please try again', ToastAndroid.SHORT);
         }
-        console.error(error);
       });
   };
 
@@ -54,8 +61,8 @@ const LoginScreen = ({ navigation }) => {
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      position:'absolute',
-      bottom:hp(1.5),
+      position: 'absolute',
+      bottom: hp(1.5),
       left: wp(24)
     },
     footerText: {
@@ -97,13 +104,13 @@ const LoginScreen = ({ navigation }) => {
             <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
           </TouchableOpacity>
         </View>
-
         <View style={{ marginTop: hp(2), paddingHorizontal: wp(5) }}>
           <CustomButton label={'Login'} showGoogleIcon={false} onPress={loginUser} />
           <Text style={{ textAlign: 'center', marginVertical: hp(1), fontWeight: 'bold', color: 'black' }}>OR</Text>
           <CustomButton label={'Continue with Google'} showGoogleIcon={true} backgroundColor={'#D9D9D9'} textColor={'black'} />
         </View>
         <View style={styles.footerContainer}>
+
           <Text style={styles.footerText}>Don't have an account?</Text>
           <TouchableOpacity
             onPress={() => { navigation.navigate('SignUp'); }}
