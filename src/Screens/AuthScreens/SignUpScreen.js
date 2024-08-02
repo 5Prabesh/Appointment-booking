@@ -1,4 +1,4 @@
-import { View, Text, StatusBar, Dimensions, StyleSheet, TouchableOpacity, ScrollView, ToastAndroid } from 'react-native';
+import { View, Text, StatusBar, StyleSheet, TouchableOpacity, ScrollView, ToastAndroid } from 'react-native';
 import React, { useState } from 'react';
 import ImageContainer from '../../Components/ImageContainer';
 import InputField from '../../Components/InputField';
@@ -7,11 +7,15 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import auth from '@react-native-firebase/auth';
 
 const SignUpScreen = ({ navigation }) => {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const handlePress = () => {
-    navigation.navigate('Login');
+    if (password !== confirmPassword) {
+      ToastAndroid.show('Passwords do not match', ToastAndroid.SHORT);
+      return;
+    }
     createUser();
   };
 
@@ -24,8 +28,8 @@ const SignUpScreen = ({ navigation }) => {
     auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
-        console.log('User signed in!');
-        ToastAndroid.show('User successfully Logged In', ToastAndroid.SHORT);
+        console.log('User signed up!');
+        ToastAndroid.show('User successfully signed up', ToastAndroid.SHORT);
       })
       .catch(error => {
         if (error.code === 'auth/invalid-email') {
@@ -33,7 +37,7 @@ const SignUpScreen = ({ navigation }) => {
           ToastAndroid.show('Credentials are incorrect', ToastAndroid.SHORT);
         } else {
           console.error(error);
-          ToastAndroid.show('Login failed. Please try again', ToastAndroid.SHORT);
+          ToastAndroid.show('Sign up failed. Please try again', ToastAndroid.SHORT);
         }
       });
   };
@@ -64,17 +68,17 @@ const SignUpScreen = ({ navigation }) => {
       fontWeight: 'bold',
     },
     buttonContainer: {
-      marginTop: hp(3), 
+      marginTop: hp(3),
     },
     policyContainer:{
-      marginTop: 0
+      marginTop: 0,
     },
     loginContainer: {
       marginTop: hp(3),
       flexDirection: 'row',
       justifyContent: 'center',
-      position:'relative',
-      bottom: hp(1)
+      position: 'relative',
+      bottom: hp(1),
     },
     loginText: {
       color: 'black',
@@ -89,7 +93,7 @@ const SignUpScreen = ({ navigation }) => {
     <View style={styles.container}>
       <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
       <ImageContainer path={require('../../assets/images/signUpImage.png')} onPress={() => navigation.goBack()} imageheight={hp(40)} />
-      <ScrollView contentContainerStyle={styles.scrollViewContent}>
+      <ScrollView contentContainerStyle={styles.scrollViewContent} keyboardShouldPersistTaps="handled">
         <View>
           <View style={styles.signUpTextContainer}>
             <Text style={styles.signUpText}>Sign up</Text>
@@ -107,8 +111,8 @@ const SignUpScreen = ({ navigation }) => {
             <InputField 
               label={'Confirm password'} 
               type={'password'} 
-              value={password}
-              onChangeText={text => setPassword(text)} 
+              value={confirmPassword}
+              onChangeText={text => setConfirmPassword(text)} 
             />
           </View>
         </View>
