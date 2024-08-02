@@ -1,23 +1,22 @@
-import { View, Text, StatusBar, Dimensions, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
-import React,{useState} from 'react'
+import { View, Text, StatusBar, Dimensions, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import React, { useState } from 'react';
 import ImageContainer from '../../Components/ImageContainer';
 import InputField from '../../Components/InputField';
 import CustomButton from '../../Components/CustomButton';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import auth from '@react-native-firebase/auth';
 
-
 const SignUpScreen = ({ navigation }) => {
-  const { width, height } = Dimensions.get('screen');
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
- const  handlePress = () =>{
-  navigation.navigate('Login');
-  createUser();
- }
+  const handlePress = () => {
+    navigation.navigate('Login');
+    createUser();
+  };
 
- const createUser = () => {
-  auth()
+  const createUser = () => {
+    auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
         console.log('User account created & signed in!');
@@ -33,69 +32,106 @@ const SignUpScreen = ({ navigation }) => {
 
         console.error(error);
       });
- }
+  };
 
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor:'white'
+      backgroundColor: 'white',
+    },
+    scrollViewContent: {
+      flexGrow: 1,
+      justifyContent: 'space-between',
     },
     signUpTextContainer: {
-      margin: 15
+      margin: wp(4),
     },
     signUpText: {
       color: 'black',
-      fontSize: 25,
+      fontSize: wp(6),
       fontWeight: 'bold',
     },
-  })
+    termsText: {
+      color: 'grey',
+      marginLeft: 20
+    },
+    termsHighlight: {
+      color: 'black',
+      fontWeight: 'bold',
+    },
+    buttonContainer: {
+      marginTop: hp(3), 
+    },
+    policyContainer:{
+      marginTop: 0
+    },
+    loginContainer: {
+      marginTop: hp(3),
+      flexDirection: 'row',
+      justifyContent: 'center',
+      position:'relative',
+      bottom: hp(1)
+    },
+    loginText: {
+      color: 'black',
+      fontWeight: 'bold',
+    },
+    loginButton: {
+      color: 'grey',
+    },
+  });
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
-      <ImageContainer path={require('../../assets/images/signUpImage.png')} onPress={() => navigation.goBack()} />
-      <ScrollView>
-        <View style={styles.signUpTextContainer}>
-          <Text style={styles.signUpText}>
-            Sign up
-          </Text>
-          <InputField 
-          label={'Enter email address'} 
-          value={email}
-          onChangeText={text => setEmail(text)}/>
-          <InputField 
-          label={'Enter password'} 
-          type={'password'} 
-          value={password}
-          onChangeText={text => setPassword(text)}/>
-          <InputField 
-          label={'Confirm password'} 
-          type={'password'} 
-          value={password}
-          onChangeText={text => setPassword(text)}/>
-
+      <ImageContainer path={require('../../assets/images/signUpImage.png')} onPress={() => navigation.goBack()} imageheight={hp(40)} />
+      <ScrollView contentContainerStyle={styles.scrollViewContent}>
+        <View>
+          <View style={styles.signUpTextContainer}>
+            <Text style={styles.signUpText}>Sign up</Text>
+            <InputField 
+              label={'Enter email address'} 
+              value={email}
+              onChangeText={text => setEmail(text)} 
+            />
+            <InputField 
+              label={'Enter password'} 
+              type={'password'} 
+              value={password}
+              onChangeText={text => setPassword(text)} 
+            />
+            <InputField 
+              label={'Confirm password'} 
+              type={'password'} 
+              value={password}
+              onChangeText={text => setPassword(text)} 
+            />
+          </View>
         </View>
-        <View style={{marginTop: 15,alignItems:'center'}}>
-          <Text style={{color:'grey'}}>
-            By signing up, you are agree to our <Text style={{color:'black', fontWeight:'bold'}}>Terms, Conditions{'\n'}</Text> and <Text style={{color:'black', fontWeight:'bold'}}>Policies.</Text>
-          </Text>
-        </View>
-        <View style={{marginTop: 20}}>
-        <CustomButton label={'Continue'} onPress={handlePress}/>
-        </View>
-        <View style={{marginTop: 15,flexDirection:'row', justifyContent:'center'}}>
-          <Text style={{color:'black', fontWeight:'bold'}}>Already have an account?</Text>
-          <TouchableOpacity 
-          onPress={()=>navigation.navigate('Login')}
-          activeOpacity={0.4}
-          >
-            <Text style={{color:'grey'}}>
-              {'\t'}Log in 
+        <View>
+          <View style={styles.policyContainer}>
+            <Text style={styles.termsText}>
+              By signing up, you agree to our <Text style={styles.termsHighlight}>Terms, Conditions{'\n'}</Text> and <Text style={styles.termsHighlight}>Policies.</Text>
             </Text>
-          </TouchableOpacity>
+          </View>
+          <View style={styles.buttonContainer}>
+            <CustomButton label={'Continue'} onPress={handlePress} />
+          </View>
+          <View style={styles.loginContainer}>
+            <Text style={styles.loginText}>Already have an account?</Text>
+            <TouchableOpacity 
+              onPress={() => navigation.navigate('Login')}
+              activeOpacity={0.4}
+            >
+              <Text style={styles.loginButton}>
+                {'\t'}Log in 
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
     </View>
-  )
-}
+  );
+};
 
-export default SignUpScreen
+export default SignUpScreen;
