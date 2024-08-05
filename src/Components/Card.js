@@ -55,7 +55,7 @@ const DoctorCard = () => {
 const styles = StyleSheet.create({
   
   cardContainer: {
-    backgroundColor: '#8c8c8c',
+    backgroundColor: '#31493C',
     marginLeft: 15,
     borderRadius: 10,
     width: wp(75), // Adjust width for horizontal scrolling
@@ -75,12 +75,12 @@ const styles = StyleSheet.create({
     flexShrink: 1 // Allow text to shrink to fit the space
   },
   nameText: {
-    color: 'white',
+    color: '#E8F1F2',
     fontSize: wp(4),
     fontWeight: '500'
   },
   professionText: {
-    color: '#dedede',
+    color: '#E8F1F2',
     fontSize: wp(3.5)
   },
   descriptionContainer: {
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     // maxWidth: 240 // Set maximum width to constrain the text
   },
   descriptionText: {
-    color: 'white',
+    color: '#E8F1F2',
     fontSize: wp(3.5),
     textAlign:'justify'
   },
@@ -99,11 +99,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   rating: {
-    color: '#FFD700',
+    color: 'yellow',
     fontSize: wp(4)
   },
   reviews: {
-    color: 'white',
+    color: '#E8F1F2',
     fontSize: wp(4)
   },
   cardFooterContainer: {
@@ -115,14 +115,14 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 10,
-    backgroundColor: 'white',
+    backgroundColor: '#E8F1F2',
     width: wp(20),
     height: wp(10),
     justifyContent: 'center',
     borderRadius: 10
   },
   buttonText: {
-    color: 'black',
+    color: '#001A23',
     textAlign: 'center',
     fontWeight: '500'
   }
