@@ -14,8 +14,8 @@ const SearchField = ({iconName, label}) => {
           width: '90%',
           flexDirection: 'row',
           alignItems: 'center',
-          backgroundColor: '#d9d9d9',
-          borderRadius: 10,
+          backgroundColor: '#f5f5f5',
+          borderRadius: 7,
           paddingLeft: 10,
         }}>
           <FontAwesome5
@@ -24,12 +24,12 @@ const SearchField = ({iconName, label}) => {
             style={{
               position: 'absolute',
               left: 10,
-              color: 'grey'
+              color: '#7a7a7a'
             }}
           />
           <TextInput
             placeholder={label}
-            placeholderTextColor="grey"
+            placeholderTextColor="#7a7a7a"
             keyboardType="default"
             style={{
               flex: 1,
