@@ -24,7 +24,7 @@ const HomeScreen = ({navigation}) => {
     },
     usernameText: {
       fontSize: hp(2),
-      color: 'black',
+      color: '#001A23',
       fontWeight: '600'
     },
     headContainer: {
@@ -35,7 +35,7 @@ const HomeScreen = ({navigation}) => {
     headText: {
       fontSize: wp(5.5),
       fontWeight: '700',
-      color: 'black',
+      color: '#001A23',
     },
     image: {
       width: wp(35),
@@ -48,10 +48,10 @@ const HomeScreen = ({navigation}) => {
     popularText:{
       fontSize: wp(6),
       fontWeight: '600',
-      color: 'black',
+      color: '#001A23',
     },
     professionText:{
-      color:'grey',
+      color:'#001A23',
       fontSize: wp(3.5),
       marginTop:4,
     }
