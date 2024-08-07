@@ -43,6 +43,7 @@ const DoctorScreen = ({navigation}) => {
             </View>
             <ProfessionCard
                 professionals={doctors}
+                navigation={navigation}
             />
         </View>
     );

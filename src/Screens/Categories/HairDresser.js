@@ -20,14 +20,14 @@ const HairDresser = ({navigation}) => {
                 </TouchableOpacity>
                 <View style={styles.headerTextContainer}>
                     <Text style={styles.headerText}>
-                        Doctors
+                        Hair Dresser
                     </Text>
                 </View>
             </View>
             <View style={styles.searchContainer}>
                 <SearchField label={'Search'} iconName={'search'}/>
             </View>
-            <ProfessionCard professionals={HairDresser}/>
+            <ProfessionCard professionals={HairDresser} navigation={navigation}/>
         </View>
     );
 };

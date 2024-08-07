@@ -27,7 +27,7 @@ const TrainerScreen = ({navigation}) => {
             <View style={styles.searchContainer}>
                 <SearchField label={'Search'} iconName={'search'}/>
             </View>
-            <ProfessionCard professionals={Trainer}/>
+            <ProfessionCard professionals={Trainer} navigation={navigation}/>
         </View>
   )
 };

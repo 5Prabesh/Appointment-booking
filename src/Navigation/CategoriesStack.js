@@ -4,6 +4,7 @@ import DoctorScreen from "../Screens/Categories/DoctorScreen";
 import DentistScreen from "../Screens/Categories/DentistScreen";
 import HairDresser from "../Screens/Categories/HairDresser";
 import TrainerScreen from "../Screens/Categories/TrainerScreen";
+import AppointmentScreen from "../Screens/TabScreens/AppointmentScreen";
 
 const CategoriesStack = () => {
     const Stack = createNativeStackNavigator();
@@ -22,6 +23,7 @@ const CategoriesStack = () => {
         <Stack.Screen name = 'DentistScreen' component={DentistScreen} />
         <Stack.Screen name = 'HairDresserScreen' component={HairDresser} />
         <Stack.Screen name = 'TrainerScreen' component={TrainerScreen} />
+        <Stack.Screen name = 'AppointmentScreen' component={AppointmentScreen} />
     </Stack.Navigator>
   )
 }

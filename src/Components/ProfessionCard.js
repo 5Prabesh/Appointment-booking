@@ -2,12 +2,11 @@ import { View, Text, TouchableOpacity, Image, StyleSheet, FlatList } from 'react
 import React from 'react';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-const ProfessionCard = ({professionals}) => {
+const ProfessionCard = ({ professionals, navigation }) => {
     const renderProfession = ({ item }) => (
-
         <View style={styles.cardContainer}>
             <Image
-                source={{ uri: item.image }} 
+                source={{ uri: item.image }}
                 style={styles.profileImage}
             />
             <View style={styles.infoContainer}>
@@ -17,43 +16,47 @@ const ProfessionCard = ({professionals}) => {
                     {item.description}
                 </Text>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.availableButton}>
+                    <TouchableOpacity style={styles.availableButton} activeOpacity={0.9}>
                         <Text style={styles.availableText}>Available</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.bookButton}>
-                        <Text style={styles.bookText}>Book</Text>
+                    <TouchableOpacity 
+                        style={styles.bookButton} 
+                        onPress={() => navigation.navigate('AppointmentScreen', { profession: item })}
+                    >
+                        <Text style={styles.bookText}>Book now</Text>
                     </TouchableOpacity>
                 </View>
             </View>
         </View>
-    )
+    );
 
     return (
         <FlatList
             data={professionals}
             renderItem={renderProfession}
             keyExtractor={item => item.id.toString()}
-            vertical={true} // Enable horizontal scrolling
-            showsVerticalScrollIndicator={false} // Hide horizontal scroll indicator (optional)
+            showsVerticalScrollIndicator={false}
         />
-    )
+    );
 };
 
 const styles = StyleSheet.create({
     cardContainer: {
         flexDirection: 'row',
-        backgroundColor: '#EEEEEE',
+        backgroundColor: '#EBEAEA',
         borderRadius: 10,
         padding: 10,
         alignItems: 'center',
         width: '90%',
-        margin: 20
+        marginLeft: 20,
+        marginTop: 15,
+        elevation: 8,
     },
     profileImage: {
         width: wp(11),
         height: hp(6),
         borderRadius: 30,
-        backgroundColor: '#d8d8d8',
+        backgroundColor: '#white',
         marginRight: 10,
     },
     infoContainer: {
@@ -62,43 +65,44 @@ const styles = StyleSheet.create({
     name: {
         fontSize: wp(4.5),
         fontWeight: 'bold',
-        color: '#333',
+        color: '#2C302E',
     },
     qualification: {
         fontSize: wp(3.5),
-        color: '#666',
+        color: '#2C302E',
     },
     description: {
         fontSize: wp(3.5),
-        color: '#666',
+        color: '#2C302E',
         marginVertical: 5,
     },
     buttonContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        padding:5
+        padding: 5,
     },
     availableButton: {
-        backgroundColor: '#000',
-        borderRadius: 5,
+        borderRadius: 4,
         paddingHorizontal: 15,
         paddingVertical: 5,
         marginRight: 10,
+        borderColor: 'green',
+        borderWidth: 1,
     },
     availableText: {
-        color: '#fff',
+        color: '#2C302E',
         fontSize: wp(3.5),
     },
     bookButton: {
-        backgroundColor: 'white',
-        borderRadius: 5,
+        backgroundColor: '#31493C',
+        borderRadius: 4,
         paddingHorizontal: 15,
         paddingVertical: 5,
     },
     bookText: {
-        color: '#000',
+        color: 'white',
         fontSize: wp(3.5),
     },
-})
+});
 
 export default ProfessionCard;
