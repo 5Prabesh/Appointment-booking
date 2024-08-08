@@ -4,7 +4,7 @@ import professionalsData from '../assets/data/professionalsdata';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
-const DoctorCard = () => {
+const DoctorCard = ({navigation}) => {
 
   const [doctors, setDoctors] = useState(professionalsData.filter(profession => profession.isPopular === 'true'));
 
@@ -32,7 +32,7 @@ const DoctorCard = () => {
           <Text style={styles.reviews}> ({item.reviews})</Text>
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity activeOpacity={0.7} style={styles.button}>
+          <TouchableOpacity activeOpacity={0.7} style={styles.button} onPress={() => navigation.navigate('AppointmentScreen', { profession: item })}>
             <Text style={styles.buttonText}>Book</Text>
           </TouchableOpacity>
         </View>

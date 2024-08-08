@@ -119,7 +119,7 @@ const HomeScreen = ({navigation}) => {
         </View>
 
         {/* card */}
-        <DoctorCard />
+        <DoctorCard navigation={navigation} />
       </ScrollView>
   );
 };
