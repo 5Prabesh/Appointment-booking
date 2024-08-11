@@ -4,7 +4,6 @@ import DoctorScreen from "../Screens/Categories/DoctorScreen";
 import DentistScreen from "../Screens/Categories/DentistScreen";
 import HairDresser from "../Screens/Categories/HairDresser";
 import TrainerScreen from "../Screens/Categories/TrainerScreen";
-import AppointmentScreen from "../Screens/TabScreens/AppointmentScreen";
 
 const CategoriesStack = () => {
     const Stack = createNativeStackNavigator();
@@ -14,16 +13,13 @@ const CategoriesStack = () => {
     initialRouteName="CategoriesScreen"
     screenOptions={{
       headerShown : false
-      
     }}
-    
     >
         <Stack.Screen name = 'CategoriesScreen' component={CategoriesScreen} />
         <Stack.Screen name = 'DoctorScreen' component={DoctorScreen} />
         <Stack.Screen name = 'DentistScreen' component={DentistScreen} />
         <Stack.Screen name = 'HairDresserScreen' component={HairDresser} />
         <Stack.Screen name = 'TrainerScreen' component={TrainerScreen} />
-        <Stack.Screen name = 'AppointmentScreen' component={AppointmentScreen} />
     </Stack.Navigator>
   )
 }

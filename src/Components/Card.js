@@ -32,7 +32,7 @@ const DoctorCard = ({navigation}) => {
           <Text style={styles.reviews}> ({item.reviews})</Text>
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity activeOpacity={0.7} style={styles.button} onPress={() => navigation.navigate('AppointmentScreen', { profession: item })}>
+          <TouchableOpacity activeOpacity={0.7} style={styles.button}  onPress={() => navigation.navigate('AppointmentStack', { screen: 'AppointmentScreen', params: { profession: item } })}>
             <Text style={styles.buttonText}>Book</Text>
           </TouchableOpacity>
         </View>

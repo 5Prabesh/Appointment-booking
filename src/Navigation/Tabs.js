@@ -2,11 +2,11 @@ import { View, Image,Text} from "react-native";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../Screens/TabScreens/HomeScreen";
-import CategoriesScreen from "../Screens/TabScreens/CategoriesScreen";
-import AppointmentScreen from "../Screens/TabScreens/AppointmentScreen";
 import MessageScreen from "../Screens/TabScreens/MessageScreen";
 import ProfileScreen from "../Screens/TabScreens/ProfileScreen";
 import CategoriesStack from "./CategoriesStack";
+import AppointmentScreen from "../Screens/TabScreens/AppointmentScreen";
+import AppointmentStack from "./AppointmentStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -59,7 +59,7 @@ const Tabs = () => {
                 )
             }}
             />
-            <Tab.Screen name='AppointmentScreen' component={AppointmentScreen} 
+            <Tab.Screen name='AppointmentStack' component={AppointmentStack} 
             options={{
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems:'center'}}>

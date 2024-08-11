@@ -21,7 +21,7 @@ const ProfessionCard = ({ professionals, navigation }) => {
                     </TouchableOpacity>
                     <TouchableOpacity 
                         style={styles.bookButton} 
-                        onPress={() => navigation.navigate('AppointmentScreen', { profession: item })}
+                        onPress={() => navigation.navigate('AppointmentStack', { screen: 'AppointmentScreen', params: { profession: item } })}
                     >
                         <Text style={styles.bookText}>Book now</Text>
                     </TouchableOpacity>

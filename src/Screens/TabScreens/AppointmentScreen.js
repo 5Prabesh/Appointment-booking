@@ -47,7 +47,7 @@ const AppointmentScreen = ({ route, navigation }) => {
                 </TouchableOpacity>
             </View>
             <View style={styles.bookButtonContainer}>
-                <CustomButton label={'Book an Appointment'}/>
+                <CustomButton label={'Book an Appointment'} onPress={()=>navigation.navigate('DateAndTimeScreen')}/>
             </View>
         </View>
     );
