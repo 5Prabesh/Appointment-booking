@@ -36,17 +36,17 @@ const AppointmentScreen = ({ route, navigation }) => {
                 <Text style={styles.description}>{profession.description}</Text>
             </View>
             <View style={styles.contactMethodContainer}>
-                <TouchableOpacity activeOpacity={0.3}>
-                    <AntDesign name={'phone'} size={22} color={'#001A23'} />
+                <TouchableOpacity activeOpacity={0.7} style={styles.contactButton}>
+                    <AntDesign name={'phone'} size={22} color={'white'} />
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.3}>
-                    <AntDesign name={'videocamera'} size={22} color={'#001A23'} />
+                <TouchableOpacity activeOpacity={0.7} style={styles.contactButton}>
+                    <AntDesign name={'videocamera'} size={22} color={'white'} />
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.3}>
-                    <AntDesign name={'message1'} size={22} color={'#001A23'} />
+                <TouchableOpacity activeOpacity={0.7} style={styles.contactButton}>
+                    <AntDesign name={'message1'} size={22} color={'white'} />
                 </TouchableOpacity>
             </View>
-            <View style={styles.bookButton}>
+            <View style={styles.bookButtonContainer}>
                 <CustomButton label={'Book an Appointment'}/>
             </View>
         </View>
@@ -106,7 +106,13 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         marginTop: 20,
     },
-    bookButton: {
+    contactButton:{
+        borderWidth:1,
+        padding:10,
+        borderRadius: 10,
+        backgroundColor:'#001A23',
+    },
+    bookButtonContainer: {
         position: 'absolute',
         bottom: hp(1),
         right:0,
