@@ -6,7 +6,20 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import CustomButton from '../../Components/CustomButton';
 
 const AppointmentScreen = ({ route, navigation }) => {
-    const { profession } = route.params;
+    const profession = route?.params?.profession || null;
+
+    if (!profession) {
+        // Show a fallback UI if no profession is passed
+        return (
+            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor:'white'}}>
+                <Text style={{ fontSize: 18, color: 'black' }}>No appointment selected.</Text>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Text style={{ fontSize: 16, color: 'blue', marginTop: 10 }}>Go back</Text>
+                </TouchableOpacity>
+            </View>
+        );
+    }
+
     return (
         <View style={{ backgroundColor: 'white', flex: 1 }}>
             <View style={styles.headerContainer}>
@@ -47,7 +60,7 @@ const AppointmentScreen = ({ route, navigation }) => {
                 </TouchableOpacity>
             </View>
             <View style={styles.bookButtonContainer}>
-                <CustomButton label={'Book an Appointment'} onPress={()=>navigation.navigate('DateAndTimeScreen')}/>
+                <CustomButton label={'Book an Appointment'} backgroundColor={'#31493C'} onPress={()=>navigation.navigate('DateAndTimeScreen')}/>
             </View>
         </View>
     );
@@ -110,7 +123,7 @@ const styles = StyleSheet.create({
         borderWidth:1,
         padding:10,
         borderRadius: 10,
-        backgroundColor:'#001A23',
+        backgroundColor:'#31493C',
     },
     bookButtonContainer: {
         position: 'absolute',
