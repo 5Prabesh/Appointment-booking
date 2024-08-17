@@ -123,7 +123,7 @@ const SignUpScreen = ({ navigation }) => {
             </Text>
           </View>
           <View style={styles.buttonContainer}>
-            <CustomButton label={'Continue'} onPress={handlePress} />
+            <CustomButton label={'Continue'} onPress={handlePress} backgroundColor={'#31493C'} textColor={'#FFD700'}/>
           </View>
           <View style={styles.loginContainer}>
             <Text style={styles.loginText}>Already have an account?</Text>

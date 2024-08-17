@@ -36,6 +36,8 @@ const OnBoardingScreen = ({ navigation }) => {
         <CustomButton 
         label={"Let's Go"} 
         onPress={()=>navigation.navigate('Login')}
+        backgroundColor={'#31493C'}
+        textColor={'#FFD700'}
         />
       </View>
     </View>

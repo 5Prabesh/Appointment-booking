@@ -46,7 +46,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          <CustomButton label={'Continue'} onPress={() => { navigation.navigate('Otp') }} />
+          <CustomButton label={'Continue'} onPress={() => { navigation.navigate('Otp') }} backgroundColor={'#31493C'} textColor={'#FFD700'}/>
         </View>
       </ScrollView>
     </View>

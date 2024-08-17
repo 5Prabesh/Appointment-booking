@@ -45,7 +45,7 @@ const ChangePasswordScreen = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          <CustomButton label={'Confirm'} onPress={() => navigation.navigate('Login')} />
+          <CustomButton label={'Confirm'} onPress={() => navigation.navigate('Login')} backgroundColor={'#31493C'} textColor={'#FFD700'}/>
         </View>
       </ScrollView>
     </View>

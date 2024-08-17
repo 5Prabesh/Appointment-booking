@@ -105,7 +105,7 @@ const OtpScreen = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          <CustomButton label={'Submit'} onPress={() => navigation.navigate('ChangePassword')} />
+          <CustomButton label={'Submit'} onPress={() => navigation.navigate('ChangePassword')} backgroundColor={'#31493C'} textColor={'#FFD700'}/>
         </View>
       </ScrollView>
     </View>

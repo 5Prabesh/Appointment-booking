@@ -62,7 +62,7 @@ const LoginScreen = ({ navigation }) => {
       flexDirection: 'row',
       justifyContent: 'center',
       position: 'relative',
-      bottom: hp(1),
+      bottom: hp(1.5),
     },
     footerText: {
       color: 'black',
@@ -104,7 +104,7 @@ const LoginScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={{ marginTop: hp(2), paddingHorizontal: wp(5) }}>
-          <CustomButton label={'Login'} showGoogleIcon={false} onPress={loginUser} />
+          <CustomButton label={'Login'} showGoogleIcon={false} onPress={loginUser} backgroundColor={'#31493C'} textColor={'#FFD700'}/>
           <Text style={{ textAlign: 'center', marginVertical: hp(1), fontWeight: 'bold', color: 'black' }}>OR</Text>
           <CustomButton label={'Continue with Google'} showGoogleIcon={true} backgroundColor={'#D9D9D9'} textColor={'black'} />
         </View>
