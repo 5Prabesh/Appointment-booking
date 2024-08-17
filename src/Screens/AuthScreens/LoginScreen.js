@@ -58,12 +58,11 @@ const LoginScreen = ({ navigation }) => {
       fontSize: wp(3.8)
     },
     footerContainer: {
+      marginTop: hp(3),
       flexDirection: 'row',
       justifyContent: 'center',
-      alignItems: 'center',
-      position: 'absolute',
-      bottom: hp(1.5),
-      left: wp(24)
+      position: 'relative',
+      bottom: hp(1),
     },
     footerText: {
       color: 'black',
@@ -120,7 +119,6 @@ const LoginScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </ScrollView>
-
 
     </View>
   );
